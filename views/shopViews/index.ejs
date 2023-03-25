@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="container">
+      <div class="info">
+        <h2>Welcome to Salon registration!</h2>
+        <p>We're excited to have you register with us. Please fill out the form to get started.</p>
+      </div>
+        <div class="form">
+          <form action="/shop/register" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required oninvalid="this.setCustomValidity('Please enter your name.')" oninput="this.setCustomValidity('')">
+            
+            <br><br>
+        
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required ><br><br>
+        
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+        
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+        
+            <label for="area">Area:</label><br>
+            <input type="text" id="area" name="area" required><br><br>
+        
+            <input type="submit" class="register-button" value="Register">
+          </form>
+
+        </div>
+       
+      </div>
+</body>
+</html>

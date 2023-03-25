@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DashBoard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+  <nav>
+    <p><%= shop.address %></p>
+    <h1> <%= shop.name %></h1>
+   <form action="/shop/logout" method="POST">
+      <button type="submit" class="register-button">Logout</button>
+       </form>
+  </nav>
+
+  <main>
+    <section class="left-section">
+      <h1>Appointments</h1>
+      <% if (appointments.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% appointments.forEach(function(appointment) { %>
+              <tr>
+                <td><%= appointment.name %></td>
+                <td><%= appointment.date.toLocaleDateString() %></td>
+                <td><%= appointment.date.toLocaleTimeString() %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>There are no appointments.</p>
+      <% } %>
+    </section>
+
+
+    <section class="mid-section">
+      
+        <h2>Barber List</h2>
+        <% if (barbers.length > 0) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Specialty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% barbers.forEach(function(barber) { %>
+                <tr>
+                  <td><%= barber.name %></td>
+                  <td><%= barber.specialty %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p>There are no barbers to show.</p>
+        <% } %>
+        <h2>Add Barber</h2>
+        <form action="/shop/barber-register" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="specialty">Specialty:</label>
+          <input type="text" id="specialty" name="specialty" required>
+          <br>
+          <button type="submit" class="register-button">Add Barber</button>
+        </form>
+     
+      
+    </section>
+
+
+    <section class="right-section">
+      
+        <h2>Service List</h2>
+        <% if (services.length > 0) { %>
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% services.forEach(function(service) { %>
+                <tr>
+                  <td><%= service.name %></td>
+                  <td><%= service.price %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p>There are no service to show.</p>
+        <% } %>
+
+        <h2>Add Service</h2>
+        <form method="POST" action="/shop/service-register">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name">
+      
+          <label for="price">Price:</label>
+          <input type="number" name="price" id="price">
+          <br>
+          <button type="submit" class="register-button">Submit</button>
+        </form>
+      
+    </section>
+
+
+    
+  </main>
+   
+   
+
+
+
+
+  
+
+  
+</body>
+</html>

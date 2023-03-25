@@ -1,0 +1,128 @@
+html,body{
+    
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+
+}
+
+.container{
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  width: 40vw;
+  border: 1px solid grey;
+  border-radius: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; 
+  /* animation: myAnim 2s ease 0s 1 normal forwards; */
+  
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+  75%{
+    opacity: 0.75;
+  }
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Add other styles for the container, info, and form as needed */
+
+/* Apply the fade-in class to the container after a delay */
+
+
+.info{
+  background-color: #badfe7  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right:  1px solid grey;
+  color: #388087;
+  height: 100%;
+  width: 50%;
+}
+
+.form{
+  background-color: #f6f6f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 50%;
+}
+
+
+
+label{
+  display: block;
+  /* padding-bottom: 2px; */
+  height:10px
+}
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f6f6f2;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6FB3B8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+ background-color: white;
+}
+
+p{
+  padding: 0px 30px 0px 30px;
+}
+h2{
+  padding: 0px 20px 0px 20px;
+
+}
+
+
+.register-button{
+  background-color: #6FB3B8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width:100%;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-button:hover{
+  background-color: #3b868b
+}
+

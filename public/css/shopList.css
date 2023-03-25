@@ -1,0 +1,85 @@
+@import url('variables.css');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    height: 100%;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var( --first-color);
+}
+
+
+
+.card {
+   
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+     margin: 10px; 
+    height: 40vh;
+    width:20vw;
+    font-size: 1.5rem; 
+    background-color: var(--fourth-color);
+   
+    
+  }
+ 
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--fifth-color);
+    height:80%;
+    width: 100%;
+  }
+
+  .reviews{
+    display: none
+   
+    
+  }
+  
+  
+
+  .card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    height: 45vh;
+    width:25vw;
+    transition: all .2s ease-in-out
+
+  }
+
+  .card:hover .reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+   
+    border-top: 1px solid grey;
+    background-color: var(--second-color);
+    
+      
+  }
+
+   a{
+    text-decoration: none;
+  }
+a:link, a:visited{
+    color:black
+  }
+
+
+
+  

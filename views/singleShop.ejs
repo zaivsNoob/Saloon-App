@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= shop.name %></title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .no-data {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><%= shop.name %></h1>
+      <p><%= shop.address %></p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Barbers:</h2>
+        <ul>
+          <% if (shop.barbers.length > 0) { %>
+            <% shop.barbers.forEach((barber) => { %>
+              <li><a href="/customer/<%= shop.slug%>/<%=barber.name%>"><%= barber.name %></a></li>
+            <% }) %>
+          <% } else { %>
+            <li class="no-data">There are no barbers to show</li>
+          <% } %>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Services:</h2>
+        <ul>
+          <% if (shop.services.length > 0) { %>
+            <% shop.services.forEach((service) => { %>
+              <li><%= service.name %> - $<%= service.price %></li>
+            <% }) %>
+          <% } else { %>
+            <li class="no-data">There are no services to show</li>
+          <% } %>
+        </ul>
+      </section>
+
+     
+    </main>
+  </body>
+</html>

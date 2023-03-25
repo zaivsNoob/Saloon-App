@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/shopList.css">
+</head>
+<body>
+   
+      
+    
+        <div class="container">
+          <% shops.forEach(function(shop) { %>
+            <a href="/customer/<%= shop.slug %>">
+              <div class="card">
+                <div class="card-content">
+                  <h2> <%= shop.name %></h2>
+                  <p><%= shop.address %> </p>
+                </div>
+                <div class="reviews">
+                 <p>test</p>
+                </div>
+              </div>
+              
+          
+            </a>
+          <% }); %>
+        </div>
+</body>
+</html>
